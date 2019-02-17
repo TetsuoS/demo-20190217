@@ -1,0 +1,29 @@
+swagger: "2.0"
+info:
+  description: "A simple Google Cloud Endpoints API example."
+  title: "Endpoints Example"
+  version: "1.0.0"
+host: "sample-api10.endpoints.docker-book-203413.cloud.goog"
+x-google-endpoints:
+    - name: "sample-api10.endpoints.docker-book-203413.cloud.goog"
+      target: "104.198.123.245" 
+paths:
+  /hello:
+    get:
+      operationId: helloWorld
+      description: Returns greeting message.
+      produces:
+        - text/plain
+      responses:
+        '200':
+          description: returns hello world.
+          schema:
+            type: string
+      security:
+      - api_key: []
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: key
+    in: query
+
